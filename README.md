@@ -1,1 +1,1 @@
-# JustDoIT-App
+### Team JustDoIT
