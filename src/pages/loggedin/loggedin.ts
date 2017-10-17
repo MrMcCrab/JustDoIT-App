@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, Nav } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase';
 
@@ -18,7 +18,7 @@ export class LoggedinPage {
 
 	email: string;
 
-  constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public app: App, private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
  	this.email = fire.auth.currentUser.email;
   }
 
@@ -30,9 +30,17 @@ export class LoggedinPage {
     firebase.auth().signOut().then(function() {
       console.log("Logged out!!!")
       //this.navCtrl.setRoot('LoginPage');
+      //this.app.getRootNav().setRoot('LoginPage')
+      this.app.setRoot('LoginPage');
     }, function(error) {
       console.log("ERROR!!!")
     });
   }
+
+  // public logout() {
+  //   this.auth.logout().subscribe(succ => {
+  //     this.app.getRootNav().setRoot('login-page') //hide tabs after logout
+  //   });
+  // }
 
 }

@@ -29,7 +29,7 @@ export class MenuPage {
 
   pages: PageInterface[] = [
     { title: 'Home', pageName: 'TabsPage', tabComponent: 'LoggedinPage', index: 0, icon: 'home'},
-    { title: 'List', pageName: 'TabsPage', tabComponent: 'ListPage', index: 1, icon: 'contacts'},
+    { title: 'List', pageName: 'TabsPage', tabComponent: 'ListPage', index: 1, icon: 'list-box'},
     { title: 'About', pageName: 'TabsPage', tabComponent: 'AboutPage', index: 2, icon: 'contacts'},
   ]
 
