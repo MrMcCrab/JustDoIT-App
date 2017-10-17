@@ -4,4 +4,6 @@ After running "ionic serve" or "ionic serve --lab", it will ask you to do "npm i
 
 Go to Github releases and download the fix for "node_modules", follow the instructions offered there.
 
-Sampsa Kares, Petteri Vaskin, Asko Mikkola, Mikael-Haapa-aho, Juuso Heinonen
+<b>Team JustDoIT</b>
+
+Sampsa Kares, Petteri Vaskin, Asko Mikkola, Mikael Haapa-aho, Juuso Heinonen
