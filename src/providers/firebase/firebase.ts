@@ -12,11 +12,10 @@ export class FirebaseProvider {
 
   constructor(public afd: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider');
-    //let currentUser = "unknown";
   }
 
   currentUser = " ";
-
+  
   getShoppingItems(name) {
     return this.afd.list('/users/'+name+'/');
   }

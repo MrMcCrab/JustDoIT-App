@@ -2,15 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-import { FirebaseListObservable } from 'angularfire2/database';
-import { AuthService } from '../../providers/auth-service/auth-service';
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @IonicPage({name: 'RegisterPage'})
 
@@ -23,7 +14,7 @@ export class RegisterPage {
 
 	@ViewChild('username') user;
   @ViewChild('password') password;
-  //newUser = this.user.value;
+
 
   constructor(private alertCtrl: AlertController, private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams,  public firebaseProvider: FirebaseProvider) {
   

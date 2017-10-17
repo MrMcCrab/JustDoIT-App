@@ -2,8 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-import { FirebaseListObservable } from 'angularfire2/database';
-import { AuthService } from '../../providers/auth-service/auth-service';
 
 
 @IonicPage({name: 'LoginPage'})

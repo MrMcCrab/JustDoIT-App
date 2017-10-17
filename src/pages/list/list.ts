@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { AuthService } from '../../providers/auth-service/auth-service';
@@ -21,21 +20,36 @@ export class ListPage {
   @ViewChild('username') user;
   @ViewChild('password') password;
 
-  constructor(private navCtrl: NavController, private auth: AuthService, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
+  constructor(private navCtrl: NavController, private auth: AuthService, public navParams: NavParams, public firebaseProvider: FirebaseProvider, private toast: ToastController) {
     let info = this.auth.getUserInfo();
     console.log(info);
-    //this.username = info['name'];
-    //this.email = info['email'];
-    this.shoppingItems = this.firebaseProvider.getShoppingItems(this.firebaseProvider.currentUser);
     console.log(this.firebaseProvider.currentUser);
+   if (firebaseProvider.currentUser == " "){
+    this.navCtrl.setRoot('LoginPage');
+    } else {
+      this.shoppingItems = this.firebaseProvider.getShoppingItems(this.firebaseProvider.currentUser);
+      console.log(this.firebaseProvider.currentUser);
+    }
   }
 
   addItem() {
-    this.firebaseProvider.addItem(this.newItem, this.firebaseProvider.currentUser);
+    if (this.firebaseProvider.currentUser == " "){
+      this.navCtrl.setRoot('LoginPage');
+      } else {
+        this.firebaseProvider.addItem(this.newItem, this.firebaseProvider.currentUser);
+        this.toast.create({
+          message: `Item added!`,
+          duration: 2000
+          }).present();
+      }
   }
  
   removeItem(id) {
-    this.firebaseProvider.removeItem(id, this.firebaseProvider.currentUser);
+    if (this.firebaseProvider.currentUser == " "){
+      this.navCtrl.setRoot('LoginPage');
+      } else {
+        this.firebaseProvider.removeItem(id, this.firebaseProvider.currentUser);
+      }
   }
 
   public logout() {

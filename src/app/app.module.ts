@@ -5,16 +5,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-//import { HomePage } from '../pages/home/home';
-//import { LoginPage } from '../pages/login/login';
-//import { LoggedinPage } from '../pages/loggedin/loggedin';
-//import { RegisterPage } from '../pages/register/register';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { AuthService } from '../providers/auth-service/auth-service';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 const firebaseAuth = {
     apiKey: "AIzaSyCRAIQFWLkArtm-BoHQPcG1-0RD9fWLeDs",
@@ -28,10 +24,6 @@ const firebaseAuth = {
 @NgModule({
   declarations: [
     MyApp,
-    //HomePage,
-    //LoginPage,
-    //RegisterPage,
-    //LoggedinPage
 
   ],
   imports: [
@@ -43,10 +35,6 @@ const firebaseAuth = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    //HomePage,
-    //LoginPage,
-    //RegisterPage,
-    //LoggedinPage
   ],
   providers: [
     StatusBar,
