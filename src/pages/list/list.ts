@@ -54,11 +54,12 @@ export class ListPage {
 
   public logout() {
     firebase.auth().signOut().then(() => {
-      console.log("Logged out!!!")
+      console.log("Logged out!")
       this.firebaseProvider.currentUser = " ";
-      this.navCtrl.setRoot('LoginPage');
+      //this.navCtrl.setRoot('LoginPage');
+      document.location.href = 'index.html';
     }, function(error) {
-      console.log("ERROR!!!")
+      console.log("Error!")
     });
   }
 
