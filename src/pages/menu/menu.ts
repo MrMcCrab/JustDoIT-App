@@ -1,12 +1,7 @@
+// This is the side menu which can be opened from the top-left corner of the user interface.
+
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
-
-/**
- * Generated class for the MenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
  export interface PageInterface {
   title: string;
@@ -27,7 +22,7 @@ export class MenuPage {
 
   @ViewChild(Nav) nav: Nav;
 
-  pages: PageInterface[] = [
+  pages: PageInterface[] = [ // list of icons in the menu which can be clicked to access different pages of the app.
     { title: 'Home', pageName: 'TabsPage', tabComponent: 'LoggedinPage', index: 0, icon: 'home'},
     { title: 'List', pageName: 'TabsPage', tabComponent: 'ListPage', index: 1, icon: 'list-box'},
     { title: 'About', pageName: 'TabsPage', tabComponent: 'AboutPage', index: 2, icon: 'contacts'},
@@ -68,3 +63,5 @@ export class MenuPage {
   }
 
 }
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.

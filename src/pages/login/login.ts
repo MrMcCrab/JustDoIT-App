@@ -1,8 +1,9 @@
+// The page used for logging in.
+
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-
 
 @IonicPage({name: 'LoginPage'})
 @Component({
@@ -32,7 +33,7 @@ export class LoginPage {
   signInUser() {
     this.fire.auth.signInWithEmailAndPassword(this.user.value + '@domian.xta', this.password.value)
     .then( data => {
-      console.log('got some data', this.fire.auth.currentUser);
+      console.log('got some data', this.fire.auth.currentUser); // writes in the console a huge pile of data to help the development process.
 
       this.alert('Success! You\'re logged in');
       this.navCtrl.setRoot( 'MenuPage' );
@@ -43,7 +44,9 @@ export class LoginPage {
       this.alert(error.message);
     })
     console.log('Would sign in with ', this.user.value, this.password.value);
-    this.firebaseProvider.currentUser = String(this.user.value);
+    this.firebaseProvider.currentUser = String(this.user.value); // gives our app the information of who is currently using the app.
   }
 
 }
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.

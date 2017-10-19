@@ -43,7 +43,9 @@ export class RegisterPage {
       this.alert(error.message);
     });
     console.log('Would register user with ', this.user.value, this.password.value);
-    this.firebaseProvider.addUser(this.user.value)
+    this.firebaseProvider.addUser(this.user.value) // sends the username to the provider function 'addUser'.
   }
 
 }
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.

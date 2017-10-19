@@ -1,12 +1,7 @@
+// This is the tabs bar visible at the bottom of the application user interface.
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TabsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @IonicPage({name: 'TabsPage'})
 @Component({
@@ -28,3 +23,5 @@ export class TabsPage {
   }
 
 }
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.

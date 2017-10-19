@@ -14,3 +14,5 @@ import { LoggedinPage } from './loggedin';
   ]
 })
 export class LoggedinPageModule {}
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.

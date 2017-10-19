@@ -1,3 +1,5 @@
+// This page is shown as the "home" page to the user.
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import firebase from 'firebase';
@@ -29,9 +31,9 @@ export class LoggedinPage {
   public logout() {
     firebase.auth().signOut().then(() => {
       console.log("Logged out!")
-      this.firebaseProvider.currentUser = " ";
+      this.firebaseProvider.currentUser = " "; // sets the currentUser to nobody.
       //this.navCtrl.setRoot('LoginPage');
-      document.location.href = 'index.html';
+      document.location.href = 'index.html'; // reloads the app to force the user out of the member area.
     }, function(error) {
       console.log("Error!")
     });
@@ -39,3 +41,5 @@ export class LoggedinPage {
 
 
 }
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.

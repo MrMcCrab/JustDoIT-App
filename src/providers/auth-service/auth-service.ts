@@ -1,3 +1,5 @@
+// The provider file for the account login authentication.
+
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -11,17 +13,17 @@ export class User {
     this.email = email;
   }
 }
- 
+
+
 @Injectable()
 export class AuthService {
   currentUser: User;
  
-  public login(credentials) {
+  public login(credentials) { // Not being used.
     if (credentials.email === null || credentials.password === null) {
       return Observable.throw("Please insert credentials");
     } else {
       return Observable.create(observer => {
-        // At this point make a request to your backend to make a real check!
         let access = (credentials.password === "pass" && credentials.email === "email");
         this.currentUser = new User('Simon', 'saimon@devdactic.com');
         observer.next(access);
@@ -30,11 +32,10 @@ export class AuthService {
     }
   }
  
-  public register(credentials) {
+  public register(credentials) { // Not being used.
     if (credentials.email === null || credentials.password === null) {
       return Observable.throw("Please insert credentials");
     } else {
-      // At this point store the credentials to your backend!
       return Observable.create(observer => {
         observer.next(true);
         observer.complete();
@@ -54,3 +55,5 @@ export class AuthService {
     });
   }
 }
+
+// This file is part of the JustDoIT Application developed by Sampsa Kares, Petteri Vaskin, Mikael Haapa-aho, Juuso Heinonen, and Asko Mikkola.
