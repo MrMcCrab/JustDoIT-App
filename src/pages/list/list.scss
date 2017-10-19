@@ -1,3 +1,11 @@
 page-list {
+	#additem {
+		vertical-align: middle;
+		display: flex;
 
+		flex-direction: column; //changed from row to column 18.10.2017
+	}
+	#additem button {
+		flex: 1;
+	}
 }

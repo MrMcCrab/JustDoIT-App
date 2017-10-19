@@ -5,19 +5,19 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary"><!--added color primary 18.10.2017-->
       <ion-buttons start>
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
         </ion-buttons>
-  
+
         <ion-buttons end>
           <button ion-button (click)="logout()">
             <ion-icon name="log-out"></ion-icon>
           </button>
         </ion-buttons>
-        
+
      <ion-title>List</ion-title>
   </ion-navbar>
 </ion-header>
@@ -30,11 +30,11 @@
         <ion-input type="text" [(ngModel)]="newItem" placeholder="New Shopping item"></ion-input>
       </ion-item>
     </ion-col>
-    <ion-col>
-      <button ion-button (click)="addItem()">Add!</button>
+    <ion-col id="additem">
+      <button ion-button (click)="addItem()">Add item</button>
     </ion-col>
   </ion-row>
- 
+
   <ion-list>
     <ion-item-sliding *ngFor="let item of shoppingItems | async">
       <ion-item>
@@ -44,5 +44,8 @@
         <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
       </ion-item-options>
     </ion-item-sliding>
+    <ion-item>
+      <p>Slide items to delete them</p>
+    </ion-item>
   </ion-list>
 </ion-content>
